@@ -1,0 +1,26 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%= stylesheet_link_tag "albums.new", :media => "all" %>
+
+    <div class="first-block">
+        <%= image_tag"hpb1.png", alt:"", class:"hpb" %>
+            <div class="albumm">
+            <%= form_for @album do |f| %>
+                <%= f.label :image %>
+                <%= f.file_field :image, :size => 140 %> 
+                <p><%= image_tag @album.image_url, size: "1131xauto" if @album.image? %></p>
+                <%= f.label :body %>
+                <%= f.text_area :body, :size => 140*2 %> 
+                <%= f.submit "編集する" %>
+            <% end %>
+            <%= link_to "一覧に戻る", '/albums' %>
+        </div>
+    </div>

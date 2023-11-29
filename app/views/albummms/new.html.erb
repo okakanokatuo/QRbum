@@ -1,0 +1,34 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+<%= stylesheet_link_tag "albummms.new", :media => "all" %>
+
+    <div class="first-block">
+        <%= image_tag"hpb3.png", alt:"", class:"hpb" %>
+
+        <div class="album">
+            <%= form_for @albummm do |f| %>
+                <div class="field">
+                    <%= f.label :image %>
+                    <%= f.file_field :image %>
+                </div>
+                <div class="field">
+                    <%= f.label :body %>
+                    <%= f.text_area :body, :size => 140*2 %>
+                </div>
+                <%= f.submit "確定" %>
+            <% end %>
+            <%= link_to 'テンプレ一覧', :controller => "albums", :action => "index" %>
+        </div>
+    </div>
+</body>

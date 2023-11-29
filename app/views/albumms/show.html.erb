@@ -1,0 +1,25 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet"></head>
+
+<body>
+    <%= stylesheet_link_tag "albumms.new", :media => "all" %>
+
+    <div class="first-block">
+        <%= image_tag"hpb2.png", alt:"", class:"hpb" %>
+            <div class="album">
+                <p><%= @albumm.image %></p>
+                <p><%= image_tag @albumm.image_url, size: "1131xauto" if @albumm.image? %></p>
+                <p><%= @albumm.body %></p>
+                <%= link_to "編集する", edit_albumm_path(@albumm.id) %>
+                <%= link_to "一覧に戻る", albums_path %>
+                <%= link_to 'QR Code', qr_code_album_path(@albumm) %>
+            </div>
+    </div>
+</body>

@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.first-block {
+    background-image: url("back1.JPG");
+    background-repeat: repeat-y;
+    background-size: cover;
+    font-family: 'Zen Maru Gothic';
+    font-size: 40px;
+    color: #c09090;
+    width: 100%;
+    height: auto;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.hpb {
+    display: inline;
+    width: 1440px;
+    height: 650px;
+}
+.album {
+    display: inline;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media screen and (max-width:480px) {
+    * {
+        float: none;
+        position: static;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .first-block {
+        background-image: url("back1.JPG");
+        background-repeat: repeat-y;
+        background-size: cover;
+        font-family: 'Zen Maru Gothic';
+        font-size: 20px;
+        color: #f6d5d5;
+        width: 100%;
+        height: auto;
+        padding-bottom: 250px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hpb {
+        display: inline;
+        width: 100%;
+        height: auto;
+    }
+    .album {
+        display: inline;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

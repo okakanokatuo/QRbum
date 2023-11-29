@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kusanalbum</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+  
+  <body>
+  <header>
+    <div class="header">
+      <%= link_to statics_path do %>
+        <%= image_tag"icon3.PNG", alt:"", class:"make" %>
+    <% end %>
+    </div>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+  
+    <footer>
+      <p>©QRbum.All Rights Reserved.</p>
+      <div class="header-list">
+        <ul>
+          <li><%= link_to "プライバシーポリシー", '/statics/show' %></li>
+          <li><%= link_to "おといあわせ", contacts_path %></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

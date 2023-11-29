@@ -1,0 +1,23 @@
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%= stylesheet_link_tag "contacts", :media => "all" %>
+<div class="title">おといあわせ・かんそうフォーム</div>
+
+<%= form_for @contact do |f| %>
+  <div class="field">
+    <%= f.label :入力 %>
+    <%= f.text_area :title, :size => 140 %>
+    
+  </div>
+  <%= f.submit "送信する" %>
+<% end %>
+
+
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %> 

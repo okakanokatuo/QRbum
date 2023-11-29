@@ -1,0 +1,46 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+</html>
+<%= stylesheet_link_tag "statics.index", :media => "all" %>
+
+<div class="first-block">
+    <div class="ti">
+        <p><br></p>
+        <p class="title">オリジナルの<br></p>
+        <p class="title">バースデーアルバム<br></p>
+        <p class="title">をつくろう。</p>
+    </div>
+    <div class="cat">
+        <%= image_tag"gneko.PNG", alt:"", class:"neko" %>
+    </div>
+</div>
+
+<div class="second-block">
+</div>
+
+<div class="third-block">
+
+    <div class="container">
+        <%= image_tag"gtenpure2.PNG", alt:"", class:"setumei" %>
+        <%= image_tag"gphoto2.PNG", alt:"", class:"setumei" %>
+        <%= image_tag"gqr2.PNG", alt:"", class:"setumei" %>
+    </div>
+
+    <div class="c-bnr">
+        <%= link_to albums_path do %>
+            <%= image_tag"meke.png", alt:"", class:"make" %>
+        <% end %>
+    </div>
+
+</div>
+
+</body>

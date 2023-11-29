@@ -1,0 +1,64 @@
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%= stylesheet_link_tag "albums.index", :media => "all" %>
+
+    <div class="first-block">
+        <p class="title">テンプレをえらぶ</p>
+
+        <div class="container">
+            <%= link_to '/albums/new' do %>
+            <%= image_tag"ex1.PNG", alt:"", class:"ex" %>
+            <% end %>
+
+            <%= link_to '/albumms/new' do %>
+            <%= image_tag"ex2.PNG", alt:"", class:"ex" %>
+            <% end %>
+
+            <%= link_to '/albummms/new' do %>
+            <%= image_tag"ex3.PNG", alt:"", class:"ex" %>
+            <% end %>
+        </div>
+
+    </div>
+
+    <div class="second-block">
+        <p class="title">つくったアルバム</p>
+
+        <div class="albums-container">
+            <% @albums.each do |t| %>
+                <div class="album">
+                <%= image_tag t.image_url, size: "250x200" if t.image? %>
+                <%= t.body %>
+                <%= link_to "詳細へ", album_path(t.id) %>  
+                <%= link_to "編集する", edit_album_path(t.id) %>
+                <%= button_to "削除する", album_path(t.id), method: :delete %> 
+                </div>
+            <% end %>
+            <% @albumms.each do |t| %>
+                <div class="album">
+                <%= image_tag t.image_url, size: "250x200" if t.image? %>
+                <%= t.body %>
+                <%= link_to "詳細へ", albumm_path(t.id) %>  
+                <%= link_to "編集する", edit_albumm_path(t.id) %>
+                <%= button_to "削除する", albumm_path(t.id), method: :delete %> 
+                </div>
+                <% end %>
+            <% @albummms.each do |t| %>
+                <div class="album">
+                <%= image_tag t.image_url, size: "250×200" if t.image? %>
+                <%= t.body %>
+                <%= link_to "詳細へ", albummm_path(t.id) %>  
+                <%= link_to "編集する", edit_albummm_path(t.id) %>
+                <%= button_to "削除する", albummm_path(t.id), method: :delete %> 
+                </div>
+                <% end %>
+        </div>
+    </div>
+</body>
