@@ -1,0 +1,22 @@
+databases:
+  - name: qrbum_db
+    databaseName: qrbum_db
+    user: qrbum
+    region: singapore
+
+services:
+  - type: web
+    name: qrbum
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: qrbum_db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
